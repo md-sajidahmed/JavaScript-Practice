@@ -1,0 +1,1 @@
+// Abstraction: Its main goal is to handle complexity by hiding unnecessary details from the user
