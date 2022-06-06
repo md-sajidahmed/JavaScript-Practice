@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    
+    <style>
+        .faq-category-list-accordion{
+            display: none;
+            overflow: hidden;
+        }
+        .faq-category-list, .faq-category-list-accordion{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .faq-category-list-title {
+            font-size: 20px;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+        .faq-category-list-accordion-item {
+            font-size: 17px;
+            font-weight: normal;
+        }
+        .faq-category-list-title-link{
+            color: black;
+        }
+        .faq-category-list-title-link:hover, .faq-category-list-accordion-item-link:hover{
+            text-decoration: none;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container faq-container">
+    <div class="row faq-title-row">
+        <div class="col-md-12">
+            <div class="faq-title">
+                <h1 class="text-center mt-2 mb-5">Dropdown</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row faq-content-row">
+        <div class="col-md-3 offset-md-3 faq-left-bar">
+
+            <ul class="faq-category-list">
+                <li class="faq-category-list-title">
+                    <a class="faq-category-list-title-link" href="#">FAQs (120) <span class="plusminus ml-5">+</span></a>
+
+                    <ul class="faq-category-list-accordion">
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">General Medicare (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Advantage (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Coverage (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Enrollment (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Part D (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medigap Plans (20)</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="faq-category-list-title">
+                    <a class="faq-category-list-title-link" href="#">Videos (120) <span class="plusminus ml-5">+</span></a>
+
+                    <ul class="faq-category-list-accordion">
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">General Medicare (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Advantage (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Coverage (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Enrollment (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Part D (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medigap Plans (20)</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="faq-category-list-title">
+                    <a class="faq-category-list-title-link" href="#">Blog (120) <span class="plusminus ml-5">+</span></a>
+
+                    <ul class="faq-category-list-accordion">
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">General Medicare (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Advantage (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Coverage (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Enrollment (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medicare Part D (20)</a>
+                        </li>
+                        <li class="faq-category-list-accordion-item">
+                            <a class="faq-category-list-accordion-item-link" href="#">Medigap Plans (20)</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    jQuery(document).ready(function(){
+        //-----------------------------------------------------------Normal accordion----------------------------------------------------------------------------------------
+        // jQuery('.faq-category-list-title-link').click(function(event){
+        //     jQuery(this).next('.faq-category-list-accordion').slideToggle();
+        // })
+
+
+        //-----------------------------------------------------------First item always remain open----------------------------------------------------------------------------------------
+        // jQuery('.faq-category-list-title-link:first').addClass('.selected').next('.faq-category-list-accordion').show()
+        // jQuery('.faq-category-list-title-link').click(function(event){
+        //     if(jQuery(this).hasClass('.selected')) {
+        //         jQuery(this).removeClass('.selected');
+        //         jQuery(this).next('.faq-category-list-accordion').slideToggle();
+        //     }else{
+        //         jQuery(this).next('.faq-category-list-accordion').slideToggle();
+        //     }
+        // })
+
+
+        //--------------------------------------------------------------------Accordion with plus minus-----------------------------------------------------------------------------------
+        $(".faq-category-list-title-link").click(function(){
+            if ($('.faq-category-list-accordion').is(':visible')) {
+                $(".faq-category-list-accordion").slideUp(300);
+                $(".plusminus").text('+');
+            }
+            if( $(this).next(".faq-category-list-accordion").is(':visible')){
+                $(this).next(".faq-category-list-accordion").slideUp(300);
+                $(this).children(".plusminus").text('+');
+            }else {
+                $(this).next(".faq-category-list-accordion").slideDown(300); 
+                $(this).children(".plusminus").text('-');
+            }
+        });
+
+
+    });
+</script>
+
+</body>
+</html>
