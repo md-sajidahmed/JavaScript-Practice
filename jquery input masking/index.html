@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+
+  <link rel="stylesheet" href="css/masking-input/masking-input.css"/>
+  <style>
+  
+  </style>
+
+</head>
+
+<body>
+   
+    <input type="text" class="phone" />
+    <input type="cnpj" class="cnpj" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    
+    <script>
+      $().ready(() => {
+        var maskOptions = {
+          // placeholder: "(__) ____-____",
+          onKeyPress: function(cep, e, field, options) {
+            // Use an optional digit (9) at the end to trigger the change
+            var masks = ["(00) 0000-00009", "(00) 0 0000-0000"],
+              digits = cep.replace(/[^0-9]/g, "").length,
+              // When you receive a value for the optional parameter, then you need to swap
+              // to the new format
+              mask = digits <= 10 ? masks[0] : masks[1];
+      
+            $(".phone").mask(mask, options);
+          }
+        };
+      
+        $(".phone").mask("(00) 0000-0000", maskOptions);
+        $(".cnpj").mask("00.000.000/0000-00");
+      });
+    </script>
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE HTML>
+<html>
+<form action="">
+
+  <div>
+    <label for="cc">Expiration Date</label>
+    
+    <input id="cc" type="text" placeholder="MM/YY" class="masked" pattern="(1[0-2]|0[1-9])\/(1[5-9]|2\d)" />
+  </div>
+
+</form>
+
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/masking-input.js" data-autoinit="true"></script>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text"  data-mask="XX.XXX.XXX/XXXXX-XX"/><br/>
+
+
+    <script>
+        Array.prototype.forEach.call(document.body.querySelectorAll("*[data-mask]"), applyDataMask);
+
+function applyDataMask(field) {
+    var mask = field.dataset.mask.split('');
+    
+    // For now, this just strips everything that's not a number
+    function stripMask(maskedData) {
+        function isDigit(char) {
+            return /\d/.test(char);
+        }
+        return maskedData.split('').filter(isDigit);
+    }
+    
+    // Replace `_` characters with characters from `data`
+    function applyMask(data) {
+        return mask.map(function(char) {
+            if (char != 'X') return char;
+            if (data.length == 0) return char;
+            return data.shift();
+        }).join('')
+    }
+    
+    function reapplyMask(data) {
+        return applyMask(stripMask(data));
+    }
+    
+    function changed() {   
+        var oldStart = field.selectionStart;
+        var oldEnd = field.selectionEnd;
+        
+        field.value = reapplyMask(field.value);
+        
+        field.selectionStart = oldStart;
+        field.selectionEnd = oldEnd;
+    }
+    
+    field.addEventListener('click', changed)
+    field.addEventListener('keyup', changed)
+}
+    </script>
+</body>
+</html> -->
+
